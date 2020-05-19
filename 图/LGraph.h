@@ -135,4 +135,30 @@ public:
 	virtual void dfs(string v) {
 		Graph::dfs(v);
 	}
+
+	// 广度优先搜索
+	void bfs(string v) {
+		if (ver_index.find(v) == ver_index.end()) {
+			return;
+		}
+		visited.resize(num_vertices);
+		for (int i = 0; i < num_vertices; ++i) {
+			visited[i] = false;
+		}
+		queue<int> q;
+		q.push(ver_index[v]);
+		int index;
+		while (q.empty() == false) {
+			index = q.front();
+			q.pop();
+			cout << vertices[index] << " ";
+			visited[index] = true;
+
+			for (auto x : adj_list[index]) {
+				if (visited[x.first] == false) {
+					q.push(x.first);
+				}
+			}
+		}
+	}
 };

@@ -7,7 +7,7 @@ using namespace std;
 
 void test_graph() {
 	vector<string> v{ "AA", "CC", "BB" };
-	MGraph g2(v, true);
+	LGraph g2(v, true);
 
 
 	g2.insert_edge("AA", "CC");
