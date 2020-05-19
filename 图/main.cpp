@@ -12,7 +12,10 @@ void test_graph() {
 
 	g2.print();
 	std::cout << std::endl;
-	g2.insert_vertex("XX");
+	g2.insert_edge("AA", "CC");
+	g2.insert_edge("CC", "BB", 66);
+	g2.insert_edge("XX", "OO");
+	g2.insert_edge(0, 3, 88);;
 	g2.print();
 
 	/*LGraph lg(v);
