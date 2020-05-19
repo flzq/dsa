@@ -72,13 +72,13 @@ public:
 		*/
 		return Graph::insert_edge(v_begin, v_end, weight); // 在Graph中会调用bool insert_edge(int src, int dst, int weight = 1)
 	}
-	// 插入边，只可用于插入已有节点的边
+	// 通过节点编号插入边，只可用于插入已有节点的边
 	bool insert_edge(int src, int dst, int weight = 1) {
-		// 判断节点是否存在，如果节点不存在，则不能插入，防止直接调用该函数
+		// 若直接调用该函数，判断节点是否存在，如果节点不存在，则不能插入
 		if (src < 0 || src >= num_vertices || dst < 0 || dst >= num_vertices) {
 			return false;
 		}
-		// 判断是否有边
+		// 判断是否存在边
 		if (matrix[src][dst] != INT_MAX) {
 			// 边已经存在
 			return false;

@@ -7,8 +7,7 @@ using namespace std;
 
 void test_graph() {
 	vector<string> v{ "AA", "CC", "BB" };
-	MGraph g1(5);
-	MGraph g2(v);
+	LGraph g2(v);
 
 	g2.print();
 	std::cout << std::endl;

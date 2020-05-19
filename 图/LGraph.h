@@ -30,8 +30,6 @@ public:
 		set_adjlist();
 	}
 	void print() {
-		adj_list[0].insert(std::pair<int, int>(1, 99));
-		adj_list[1].insert(std::pair<int, int>(2, 88));
 		for (int i = 0; i < num_vertices; ++i) {
 			cout << vertices[i] << "[" << i << "]-->";
 			for (auto x : adj_list[i]) {
@@ -54,6 +52,35 @@ public:
 		adj_list.push_back(map<int, int>());
 		return true;
 	}
-	
+	// 插入边
+	bool insert_edge(string v_begin, string v_end, int weight = 1) {
+		/*
+			v_begin: 开始节点
+			v_end: 结束节点
+		*/
+		return Graph::insert_edge(v_begin, v_end, weight); // 在Graph中会调用bool insert_edge(int src, int dst, int weight = 1)
+	}
+	// 通过节点编号插入边，只可用于插入已有节点的边
+	bool insert_edge(int src, int dst, int weight = 1) {
+		/*
+			src: 开始节点编号
+			dst: 结束节点编号
+		*/
+		// 若直接调用该函数，判断节点是否存在，如果节点不存在，则不能插入
+		if (src < 0 || src >= num_vertices || dst < 0 || dst >= num_vertices) {
+			return false;
+		}
+		// 判断是否存在边
+		if (adj_list[src].find(dst) != adj_list[src].end()) {
+			// 边已经存在
+			return false;
+		}
+		// 插入边
+		adj_list[src].insert(std::pair<int, int>(dst, weight));
+		if (is_directed == false) {
+			adj_list[dst].insert(std::pair<int, int>(src, weight));
+		}
+		return true;
+	}
 
 };
