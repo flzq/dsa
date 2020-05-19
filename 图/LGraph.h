@@ -83,4 +83,23 @@ public:
 		return true;
 	}
 
+	// 删除边
+	virtual bool remove_edge(string src, string dst) {
+		return Graph::remove_edge(src, dst);
+	}
+	virtual bool remove_edge(int src, int dst) {
+		// 若直接调用该函数，判断节点是否存在，如果节点不存在，则不能删除
+		if (src < 0 || src >= num_vertices || dst < 0 || dst >= num_vertices) {
+			return false;
+		}
+		// 如果没有边，则不能删除
+		if (adj_list[src].find(dst) == adj_list[src].end()) {
+			return false;
+		}
+		adj_list[src].erase(dst);
+		if (is_directed == false) {
+			adj_list[dst].erase(src);
+		}
+		return true;
+	}
 };
