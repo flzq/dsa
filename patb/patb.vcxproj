@@ -141,6 +141,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pat_b1001.cpp" />
     <ClCompile Include="pat_b1011.cpp" />
+    <ClCompile Include="pat_b1026.cpp" />
     <ClCompile Include="pat_b1032.cpp" />
     <ClCompile Include="pat_b1016.cpp" />
   </ItemGroup>
