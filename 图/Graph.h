@@ -58,4 +58,13 @@ public:
 	}
 	// 插入边，只可用于插入已有节点的边
 	virtual bool insert_edge(int src, int dst, int weight = 1) = 0;
+	// 删除边
+	virtual bool remove_edge(string src, string dst) {
+		// 有一个节点不存在，则删除失败
+		if (ver_index.find(src) == ver_index.end() || ver_index.find(dst) == ver_index.end()) {
+			return false;
+		}
+		return remove_edge(ver_index[src], ver_index[dst]);
+	}
+	virtual bool remove_edge(int src, int dst) = 0;
 };
