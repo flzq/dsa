@@ -17,6 +17,18 @@ protected:
 			}
 		}
 	}
+
+	// 深度优先搜索
+	virtual void dfs(int v) {
+		cout << vertices[v] << " ";
+		visited[v] = true;
+		for (int i = 0; i < num_vertices; ++i) {
+			if (visited[i] == false && matrix[v][i] != INT_MAX) {
+				dfs(i);
+			}
+		}
+	}
+
 public:
 	MGraph(bool is_dir = false) : Graph(is_dir) {}
 	MGraph(std::vector<std::string>& v, bool is_dir = false) : Graph(v, is_dir) {
@@ -123,5 +135,10 @@ public:
 			return false;
 		}
 		return true;
+	}
+
+	// 深度优先搜索
+	virtual void dfs(string v) {
+		Graph::dfs(v);
 	}
 };
