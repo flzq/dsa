@@ -21,6 +21,17 @@ protected:
 			x.clear();
 		}
 	}
+
+	// 深度优先搜索
+	virtual void dfs(int v) {
+		cout << vertices[v] << " ";
+		visited[v] = true;
+		for (auto x : adj_list[v]) {
+			if (visited[x.first] == false) {
+				dfs(x.first);
+			}
+		}
+	}
 public:
 	LGraph(bool is_dir = false) : Graph(is_dir) {}
 	LGraph(vector<string>& v, bool is_dir = false) : Graph(v, is_dir) {
@@ -118,5 +129,10 @@ public:
 			return false;
 		}
 		return true;
+	}
+
+	// 深度优先搜索
+	virtual void dfs(string v) {
+		Graph::dfs(v);
 	}
 };
