@@ -45,17 +45,4 @@ public:
 		ver_index[v] = num_vertices; // 节点下标从0开始
 		++num_vertices;
 	}
-	// 插入边，可用于插入新的节点的边
-	virtual bool insert_edge(string v_begin, string v_end, int weight = 1) {
-		/*
-			v_begin: 开始节点
-			v_end: 结束节点
-		*/
-		// 插入点
-		insert_vertex(v_begin);
-		insert_vertex(v_end);
-		return insert_edge(ver_index[v_begin], ver_index[v_end], weight);
-	}
-	// 插入边，只可用于插入已有节点的边
-	virtual bool insert_edge(int src, int dst, int weight = 1) = 0;
 };
