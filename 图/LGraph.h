@@ -102,4 +102,21 @@ public:
 		}
 		return true;
 	}
+
+	// 查找边
+	virtual bool find_edge(string src, string dst) {
+		return Graph::find_edge(src, dst);
+	}
+	virtual bool find_edge(int src, int dst) {
+		// 若直接调用该函数，判断节点是否存在，如果节点不存在，则无法查找
+		if (src < 0 || src >= num_vertices || dst < 0 || dst >= num_vertices) {
+			return false;
+		}
+		// 判断边是否存在
+		// 不存在，返回false
+		if (adj_list[src].find(dst) == adj_list[src].end()) {
+			return false;
+		}
+		return true;
+	}
 };
