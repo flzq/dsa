@@ -10,7 +10,10 @@ protected:
 	int num_vertices{ 0 }; // 节点数量
 	std::vector<std::string> vertices; // 存储节点名字
 	std::map<std::string, int> ver_index; // 由节点名字得到索引
+	std::vector<bool> visited;
 	bool is_directed{ false }; // 是否有向图
+	// 深度优先搜索
+	// virtual void dfs(int v) = 0;
 public:
 	// 无参构造函数，构造空图
 	Graph(bool is_dir = false) : is_directed{ is_dir } {}
@@ -77,4 +80,16 @@ public:
 		return find_edge(ver_index[src], ver_index[dst]);
 	}
 	virtual bool find_edge(int src, int dst) = 0;
+
+	// 深度优先搜索
+	//virtual void dfs(string v) {
+	//	if (ver_index.find(v) == ver_index.end()) {
+	//		return;
+	//	}
+	//	visited.resize(num_vertices);
+	//	for (int i = 0; i < num_vertices; ++i) {
+	//		visited[i] = false;
+	//	}
+	//	dfs(ver_index[v]);
+	//}
 };
