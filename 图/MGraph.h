@@ -46,6 +46,7 @@ public:
 		}
 		cout << std::endl;
 	}
+	// 插入节点
 	void insert_vertex() {
 		insert_vertex(std::to_string(num_vertices));
 	}
@@ -62,5 +63,30 @@ public:
 		}
 		// 再增加一行
 		matrix.push_back(std::vector<int>(num_vertices, INT_MAX));
+	}
+	// 插入边
+	bool insert_edge(string v_begin, string v_end, int weight = 1) {
+		/*
+			v_begin: 开始节点
+			v_end: 结束节点
+		*/
+		return Graph::insert_edge(v_begin, v_end, weight); // 在Graph中会调用bool insert_edge(int src, int dst, int weight = 1)
+	}
+	// 插入边，只可用于插入已有节点的边
+	bool insert_edge(int src, int dst, int weight = 1) {
+		// 判断节点是否存在，如果节点不存在，则不能插入，防止直接调用该函数
+		if (src < 0 || src >= num_vertices || dst < 0 || dst >= num_vertices) {
+			return false;
+		}
+		// 判断是否有边
+		if (matrix[src][dst] != INT_MAX) {
+			// 边已经存在
+			return false;
+		}
+		matrix[src][dst] = weight;
+		if (is_directed == false) {
+			matrix[dst][src] = weight;
+		}
+		return true;
 	}
 };

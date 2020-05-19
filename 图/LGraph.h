@@ -41,12 +41,19 @@ public:
 		}
 		cout << std::endl;
 	}
+	// 插入节点
 	void insert_vertex() {
 		insert_vertex(std::to_string(num_vertices));
 	}
 	bool insert_vertex(string v) {
-		Graph::insert_vertex(v);
+		bool tmp = Graph::insert_vertex(v);
+		if (tmp == false) {
+			return false;
+		}
 		// 往邻接表中添加节点
-
+		adj_list.push_back(map<int, int>());
+		return true;
 	}
+	
+
 };
