@@ -67,4 +67,14 @@ public:
 		return remove_edge(ver_index[src], ver_index[dst]);
 	}
 	virtual bool remove_edge(int src, int dst) = 0;
+
+	// 查找边
+	virtual bool find_edge(string src, string dst) {
+		// 不存在节点，则查找不到
+		if (ver_index.find(src) == ver_index.end() || ver_index.find(dst) == ver_index.end()) {
+			return false;
+		}
+		return find_edge(ver_index[src], ver_index[dst]);
+	}
+	virtual bool find_edge(int src, int dst) = 0;
 };
