@@ -161,4 +161,43 @@ public:
 			}
 		}
 	}
+
+	// 拓扑排序
+	bool top_sort() {
+		vector<int> in_degree(num_vertices, 0); // 记录节点的入度
+		queue<int> q; // 记录入度为0的点
+		// 统计节点的入度信息
+		for (auto v : adj_list) {
+			for (auto x : v) {
+				++in_degree[x.first];
+			}
+		}
+		// 统计入度为0的节点
+		for (int i = 0; i < num_vertices; ++i) {
+			if (in_degree[i] == 0) {
+				q.push(i);
+			}
+		}
+		// 输出拓扑序
+		int index{ 0 };
+		int cnt{ 0 }; // 记录位于拓扑序中的节点数量
+		while (!q.empty()) {
+			index = q.front();
+			q.pop();
+			++cnt;
+			cout << vertices[index] << " ";
+			// 将该节点的邻接点入度减一
+			for (auto x : adj_list[index]) {
+				--in_degree[x.first];
+				if (in_degree[x.first] == 0) {
+					q.push(x.first);
+				}
+			}
+		}
+		cout << std::endl;
+		if (cnt != num_vertices) {
+			return false;
+		}
+		return true;
+	}
 };
