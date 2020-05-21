@@ -8,7 +8,7 @@ using namespace std;
 void test_graph() {
 	int M;
 	string n1, n2;
-	LGraph g{ true };
+	MGraph g{ true };
 	cin >> M;
 	while (M--) {
 		cin >> n1 >> n2;

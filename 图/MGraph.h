@@ -5,6 +5,7 @@
 #include "Graph.h"
 using std::cout;
 using std::queue;
+using std::vector;
 
 class MGraph : Graph {
 protected:
@@ -168,5 +169,48 @@ public:
 				}
 			}
 		}
+	}
+
+	// 拓扑排序
+	bool top_sort() {
+		vector<int> in_degree(num_vertices, 0); // 记录节点的入度
+		queue<int> q; // 记录入度为0的点
+		// 统计节点的入度信息
+		for (int i = 0; i < num_vertices; ++i) {
+			for (int j = 0; j < num_vertices; ++j) {
+				if (matrix[i][j] != INT_MAX) {
+					++in_degree[j];
+				}
+			}
+		}
+		// 统计入度为0的节点
+		for (int i = 0; i < num_vertices; ++i) {
+			if (in_degree[i] == 0) {
+				q.push(i);
+			}
+		}
+		// 输出拓扑序
+		int index;
+		int cnt{ 0 }; // 统计拓扑序的节点数
+		while (!q.empty()) {
+			index = q.front();
+			q.pop();
+			cout << vertices[index] << " ";
+			++cnt;
+			// 更新入度
+			for (int i = 0; i < num_vertices; ++i) {
+				if (matrix[index][i] != INT_MAX) {
+					--in_degree[i];
+					if (in_degree[i] == 0) {
+						q.push(i);
+					}
+				}
+			}
+		}
+		cout << std::endl;
+		if (cnt != num_vertices) {
+			return false;
+		}
+		return true;
 	}
 };
