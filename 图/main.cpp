@@ -6,17 +6,15 @@
 using namespace std;
 
 void test_graph() {
-	int M;
+	int M, d;
 	string n1, n2;
 	MGraph g{ true };
 	cin >> M;
 	while (M--) {
-		cin >> n1 >> n2;
-		g.insert_edge(n1, n2);
+		cin >> n1 >> n2 >> d;
+		g.insert_edge(n1, n2, d);
 	}
-	g.print();
-	cout << "-----" << endl;
-	cout << g.top_sort() << endl;
+	g.dijkstra("A");
 }
 
 int main() {

@@ -6,6 +6,7 @@
 using std::cout;
 using std::queue;
 using std::vector;
+using std::endl;
 
 class MGraph : Graph {
 protected:
@@ -212,5 +213,54 @@ public:
 			return false;
 		}
 		return true;
+	}
+
+	// Dijkstra算法，不能有负边
+	void dijkstra(string str) {
+		if (ver_index.find(str) == ver_index.end()) {
+			return;
+		}
+		vector<int> from(num_vertices, -1); // 记录源点
+		vector<int> dis(num_vertices, INT_MAX); // 记录距离
+		vector<bool> visited(num_vertices, false);
+		dis[ver_index[str]] = 0;
+		for (int i = 0; i < num_vertices; ++i) { // 每次循环确定一个点，一共循环num_vertices次
+			// 选择未确认的点中距离最小的点
+			int min_index;
+			int min_dis = INT_MAX;
+			for (int j = 0; j < num_vertices; ++j) {
+				if (!visited[j] && dis[j] < min_dis) {
+					min_dis = dis[j];
+					min_index = j;
+				}
+			}
+			// 距离最小的点可以确认已经得到了最短距离
+			visited[min_index] = true;
+			// 从该点出发，更新与他相邻的点的距离
+			for (int w = 0; w < num_vertices; ++w) {
+				if (matrix[min_index][w] != INT_MAX && dis[min_index] + matrix[min_index][w] < dis[w]) {
+					dis[w] = dis[min_index] + matrix[min_index][w];
+					from[w] = min_index;
+				}
+			}
+		}
+
+		// 打印
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << i << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << vertices[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << dis[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << (from[i] == -1 ? "-" : vertices[from[i]]) << "\t";
+		}
+		cout << endl;
 	}
 };
