@@ -228,7 +228,7 @@ public:
 			visited[v] = true;
 			// 从该点出发，更新邻接点的距离
 			for (auto x : adj_list[v]) {
-				if (dis[v] + x.second < dis[x.first]) {
+				if (!visited[x.first] && dis[v] + x.second < dis[x.first]) {
 					from[x.first] = v;
 					dis[x.first] = dis[v] + x.second;
 				}

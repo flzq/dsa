@@ -242,7 +242,7 @@ public:
 			visited[min_index] = true;
 			// 从该点出发，更新与他相邻的点的距离
 			for (int w = 0; w < num_vertices; ++w) {
-				if (matrix[min_index][w] != INT_MAX && dis[min_index] + matrix[min_index][w] < dis[w]) {
+				if (matrix[min_index][w] != INT_MAX && visited[w] == false && dis[min_index] + matrix[min_index][w] < dis[w]) {
 					dis[w] = dis[min_index] + matrix[min_index][w];
 					from[w] = min_index;
 				}

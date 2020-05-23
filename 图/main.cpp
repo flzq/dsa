@@ -14,7 +14,7 @@ void test_graph() {
 		cin >> n1 >> n2 >> d;
 		g.insert_edge(n1, n2, d);
 	}
-	g.weighted_shortest_path("A");
+	g.dijkstra("A");
 }
 
 int main() {
