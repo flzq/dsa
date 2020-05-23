@@ -201,7 +201,7 @@ public:
 		return true;
 	}
 
-	// dijkstra 算法
+	// dijkstra 算法(该算法不能有负边)
 	void dijkstra(string str) {
 		if (ver_index.find(str) == ver_index.end()) {
 			return;
@@ -231,6 +231,52 @@ public:
 				}
 			}
 		}
+		// 打印
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << i << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << vertices[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << dis[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << (from[i] == -1 ? "-" : vertices[from[i]]) << "\t";
+		}
+		cout << endl;
+	}
+
+	// 单源最短路径算法（可以含有负边，但是不能有负回路）
+	// 每次都将更新了距离的点入队
+	void weighted_shortest_path(string str) {
+		if (ver_index.find(str) == ver_index.end()) {
+			return;
+		}
+
+		vector<int> dis(num_vertices, INT_MAX);
+		vector<int> from(num_vertices, -1);
+		queue<int> q;
+		dis[ver_index[str]] = 0;
+		q.push(ver_index[str]); // 更新了距离，入队
+
+		int v;
+		while (!q.empty()) {
+			v = q.front();
+			q.pop();
+			// 遍历v的邻接点
+			for (auto x : adj_list[v]) {
+				if (dis[v] + x.second < dis[x.first]) {
+					dis[x.first] = dis[v] + x.second;
+					from[x.first] = v;
+					q.push(x.first); // 距离更新则入队
+				}
+			}
+		}
+
 		// 打印
 		for (int i = 0; i < num_vertices; ++i) {
 			cout << i << "\t";
