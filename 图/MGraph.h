@@ -7,6 +7,7 @@ using std::cout;
 using std::queue;
 using std::vector;
 using std::endl;
+using std::queue;
 
 class MGraph : Graph {
 protected:
@@ -215,7 +216,7 @@ public:
 		return true;
 	}
 
-	// Dijkstra算法，不能有负边
+	// Dijkstra算法计算单源最短路径，不能有负边
 	void dijkstra(string str) {
 		if (ver_index.find(str) == ver_index.end()) {
 			return;
@@ -263,4 +264,48 @@ public:
 		}
 		cout << endl;
 	}
+
+	// 使用队列，计算单源最短路径，可以有负边，不能有负回路
+	void weighted_shortest_path(string str) {
+		if (ver_index.find(str) == ver_index.end()) {
+			return;
+		}
+		vector<int> dis(num_vertices, INT_MAX); // 距离
+		vector<int> from(num_vertices, -1); // 源点
+		queue<int> q; // 队列记录距离改变了的节点编号
+		dis[ver_index[str]] = 0;
+		q.push(ver_index[str]);
+		int v;
+		while (!q.empty()) {
+			v = q.front();
+			q.pop();
+			// 查看以v为中介点到邻接边的距离是否缩小了
+			for (int w = 0; w < num_vertices; ++w) {
+				if (matrix[v][w] != INT_MAX && dis[v] + matrix[v][w] < dis[w]) {
+					from[w] = v;
+					dis[w] = dis[v] + matrix[v][w];
+					q.push(w);
+				}
+			}
+		}
+		// 打印
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << i << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << vertices[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << dis[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << (from[i] == -1 ? "-" : vertices[from[i]]) << "\t";
+		}
+		cout << endl;
+	}
+
+
 };
