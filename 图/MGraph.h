@@ -310,5 +310,56 @@ public:
 		cout << endl;
 	}
 
+	// 求最小生成树
+	void prim(string str) {
+		if (ver_index.find(str) == ver_index.end()) {
+			return;
+		}
+		vector<int> from(num_vertices, -1);
+		vector<int> dis(num_vertices, INT_MAX); // 记录节点与树的距离
+		vector<bool> visited(num_vertices, false); // 记录节点是否在树中，每次选择距离树最小的点加入树中
+		dis[ver_index[str]] = 0;
+
+		for (int i = 0; i < num_vertices; ++i) {
+			// 找到距离树最小的点
+			int v{ -1 };
+			int min_v{ INT_MAX }; // 最小距离
+			for (int j = 0; j < num_vertices; ++j) {
+				if (!visited[j] && dis[j] < min_v) {
+					min_v = dis[j];
+					v = j;
+				}
+			}
+			if (v == -1) {
+				return; // 非连通图，没有最小生成树
+			}
+			// 找到距离树最小的点，加入树中
+			visited[v] = true;
+			// 更新与邻接自v的点与树的距离
+			for (int w = 0; w < num_vertices; ++w) {
+				if (matrix[v][w] != INT_MAX && !visited[w] && matrix[v][w] < dis[w]) {
+					dis[w] = matrix[v][w];
+					from[w] = v;
+				}
+			}
+		}
+		// 打印
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << i << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << vertices[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << dis[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << (from[i] == -1 ? "-" : vertices[from[i]]) << "\t";
+		}
+		cout << endl;
+	}
 
 };
