@@ -213,13 +213,16 @@ public:
 		dis[ver_index[str]] = 0;
 
 		for (int i = 0; i < num_vertices; ++i) { // 每次循环都得到一个距离最小的点，共循环num_vertices次
-			int v{ 0 };
+			int v{ -1 };
 			int min_v{ INT_MAX };
 			for (int j = 0; j < num_vertices; ++j) { // 找到最小点
 				if (!visited[j] && dis[j] < min_v) {
 					min_v = dis[j];
 					v = j;
 				}
+			}
+			if (v == -1) {
+				break; // 找不到距离最小的点，图不通了
 			}
 			// 将最小点标记收录
 			visited[v] = true;

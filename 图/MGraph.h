@@ -227,13 +227,16 @@ public:
 		dis[ver_index[str]] = 0;
 		for (int i = 0; i < num_vertices; ++i) { // 每次循环确定一个点，一共循环num_vertices次
 			// 选择未确认的点中距离最小的点
-			int min_index;
+			int min_index = -1;
 			int min_dis = INT_MAX;
 			for (int j = 0; j < num_vertices; ++j) {
 				if (!visited[j] && dis[j] < min_dis) {
 					min_dis = dis[j];
 					min_index = j;
 				}
+			}
+			if (min_index == -1) {
+				break; // 找不到距离最小的点，图不通了
 			}
 			// 距离最小的点可以确认已经得到了最短距离
 			visited[min_index] = true;
