@@ -200,4 +200,53 @@ public:
 		}
 		return true;
 	}
+
+	// dijkstra 算法
+	void dijkstra(string str) {
+		if (ver_index.find(str) == ver_index.end()) {
+			return;
+		}
+
+		vector<int> dis(num_vertices, INT_MAX); // 距离
+		vector<int> from(num_vertices, -1); // 源点
+		vector<bool> visited(num_vertices, false); // 收录已经得到路径的点，表示已经访问了
+		dis[ver_index[str]] = 0;
+
+		for (int i = 0; i < num_vertices; ++i) { // 每次循环都得到一个距离最小的点，共循环num_vertices次
+			int v{ 0 };
+			int min_v{ INT_MAX };
+			for (int j = 0; j < num_vertices; ++j) { // 找到最小点
+				if (!visited[j] && dis[j] < min_v) {
+					min_v = dis[j];
+					v = j;
+				}
+			}
+			// 将最小点标记收录
+			visited[v] = true;
+			// 从该点出发，更新邻接点的距离
+			for (auto x : adj_list[v]) {
+				if (dis[v] + x.second < dis[x.first]) {
+					from[x.first] = v;
+					dis[x.first] = dis[v] + x.second;
+				}
+			}
+		}
+		// 打印
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << i << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << vertices[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << dis[i] << "\t";
+		}
+		cout << endl;
+		for (int i = 0; i < num_vertices; ++i) {
+			cout << (from[i] == -1 ? "-" : vertices[from[i]]) << "\t";
+		}
+		cout << endl;
+	}
 };
