@@ -23,8 +23,10 @@
     <ClInclude Include="Graph.h" />
     <ClInclude Include="LGraph.h" />
     <ClInclude Include="MGraph.h" />
+    <ClInclude Include="HuffmanTree.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

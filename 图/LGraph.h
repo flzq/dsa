@@ -6,11 +6,14 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <queue>
 #include "Graph.h"
 using std::string;
 using std::vector;
 using std::map;
 using std::cout;
+using std::queue;
+using std::endl;
 class LGraph : Graph {
 protected:
 	vector<map<int, int>> adj_list; // аз╫с╠М

@@ -66,3 +66,5 @@ struct Edge {
 
 	}
 };
+
+void kruskal();
