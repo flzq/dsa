@@ -57,8 +57,12 @@ public:
 // 存储边的信息
 struct Edge {
 	string v, w;
-	int weigth;
+	int weight;
 	bool operator<(const Edge& e) const { // 用于建立小顶堆
-		return weigth > e.weigth;
+		return weight > e.weight;
+	}
+	Edge() {}
+	Edge(string v_, string w_, int weight_) : v{ v_ }, w{ w_ }, weight{ weight_ } {
+
 	}
 };
