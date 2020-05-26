@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Kruskal.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="LGraph.h" />
     <ClInclude Include="MGraph.h" />
