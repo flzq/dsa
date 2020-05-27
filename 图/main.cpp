@@ -1,12 +1,8 @@
-#include <string>
-#include <vector>
-#include <iostream>
-#include <queue>
-#include "Kruskal.h"
+#include "HuffmanTree.h"
 using namespace std;
 
 
 
 int main() {
-	
+	huffman_tree();
 }

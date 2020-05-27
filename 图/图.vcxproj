@@ -26,6 +26,7 @@
     <ClInclude Include="HuffmanTree.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HuffmanTree.cpp" />
     <ClCompile Include="Kruskal.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
