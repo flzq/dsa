@@ -139,10 +139,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pat_a1002.cpp" />
+    <ClCompile Include="pat_a1009.cpp" />
     <ClCompile Include="pat_a1042.cpp" />
     <ClCompile Include="pat_a1046.cpp" />
     <ClCompile Include="pat_a1065.cpp" />
-    <ClCompile Include="pat_b1010.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

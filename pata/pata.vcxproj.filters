@@ -27,7 +27,10 @@
     <ClCompile Include="pat_a1065.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="pat_b1010.cpp">
+    <ClCompile Include="pat_a1002.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pat_a1009.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

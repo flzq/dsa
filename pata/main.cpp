@@ -3,8 +3,6 @@
 using std::vector;
 
 
-
 int main() {
-
 
 }

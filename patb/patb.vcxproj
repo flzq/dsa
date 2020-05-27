@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\pata\pat_b1010.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pat_a1042.cpp" />
     <ClCompile Include="pat_b1001.cpp" />
