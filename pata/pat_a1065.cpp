@@ -1,6 +1,6 @@
 #include <cstdio>
 
-int pat_a1065() {
+void pat_a1065() {
 	/*
 		数据中没有A或B取到2^63的情况
 	*/
