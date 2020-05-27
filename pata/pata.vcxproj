@@ -141,6 +141,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="pat_a1042.cpp" />
     <ClCompile Include="pat_a1046.cpp" />
+    <ClCompile Include="pat_a1065.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
