@@ -37,9 +37,3 @@ void pat_a1009() {
 		}
 	}
 }
-
-
-
-int main() {
-	pat_a1009();
-}
