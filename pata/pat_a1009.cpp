@@ -1,16 +1,13 @@
 #include <cstdio>
-#include <vector>
-using std::vector;
-
-double pro_poly[1000010]{ 0 };
-
 
 void pat_a1009() {
 	int K;
 	int exp;
 	int cnt{ 0 }; // 计算有多少项非0项
+	const int MAX = 2010;
 	double coef;
-	double poly1[1010]{ 0 };
+	double poly1[MAX]{ 0 };
+	double pro_poly[MAX]{ 0 };
 	// 读入第一组数据
 	scanf("%d", &K);
 	while (K--) {
@@ -21,23 +18,22 @@ void pat_a1009() {
 	scanf("%d", &K);
 	while (K--) {
 		scanf("%d %lf", &exp, &coef);
-		for (int i = 0; i <= 1000; ++i) { // 对poly1中的每一项相乘
+		for (int i = 0; i < MAX; ++i) { // 对poly1中的每一项相乘
 			if (poly1[i] != 0) {
 				pro_poly[i + exp] += coef * poly1[i];
 			}
 		}
 	}
 	// 统计非0项
-	for (int i = 0; i < 1000010; ++i) {
+	for (int i = 0; i < MAX; ++i) {
 		if (pro_poly[i] != 0) {
 			++cnt;
 		}
 	}
 	printf("%d", cnt);
-	for (int i = 1000010; i >= 0; --i) {
+	for (int i = MAX - 1; i >= 0; --i) {
 		if (pro_poly[i] != 0) {
 			printf(" %d %.1f", i, pro_poly[i]);
 		}
 	}
 }
-
