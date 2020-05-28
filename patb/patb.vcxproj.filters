@@ -48,10 +48,10 @@
     <ClCompile Include="pat_b1018.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="pat_a1042.cpp">
+    <ClCompile Include="..\pata\pat_b1010.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\pata\pat_b1010.cpp">
+    <ClCompile Include="..\pata\pat_b1041.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

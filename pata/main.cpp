@@ -1,8 +1,4 @@
-#include <cstdio>
 
 
 
 
-int main() {
-
-}
