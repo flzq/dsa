@@ -138,18 +138,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\pata\pat_b1010.cpp" />
-    <ClCompile Include="..\pata\pat_b1041.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="pat_b1001.cpp" />
+    <ClCompile Include="pat_b1004.cpp" />
     <ClCompile Include="pat_b1008.cpp" />
     <ClCompile Include="pat_b1008_simple.cpp" />
+    <ClCompile Include="pat_b1010.cpp" />
     <ClCompile Include="pat_b1011.cpp" />
     <ClCompile Include="pat_b1012.cpp" />
     <ClCompile Include="pat_b1018.cpp" />
     <ClCompile Include="pat_b1026.cpp" />
     <ClCompile Include="pat_b1032.cpp" />
     <ClCompile Include="pat_b1016.cpp" />
+    <ClCompile Include="pat_b1041.cpp" />
     <ClCompile Include="pat_b1046.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

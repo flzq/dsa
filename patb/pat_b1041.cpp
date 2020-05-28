@@ -27,9 +27,3 @@ void pat_b1041() {
 	}
 }
 
-
-int main() {
-	pat_b1041();
-
-	return 0;
-}
