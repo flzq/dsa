@@ -60,5 +60,8 @@
     <ClCompile Include="pat_b1036.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="pat_b1027.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
