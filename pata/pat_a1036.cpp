@@ -48,8 +48,8 @@ void pat_a1036() {
 	}
 }
 
-
-int main() {
-	pat_a1036();
-	return 0;
-}
+//
+//int main() {
+//	pat_a1036();
+//	return 0;
+//}

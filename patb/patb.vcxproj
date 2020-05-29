@@ -150,6 +150,7 @@
     <ClCompile Include="pat_b1028.cpp" />
     <ClCompile Include="pat_b1032.cpp" />
     <ClCompile Include="pat_b1016.cpp" />
+    <ClCompile Include="pat_b1036.cpp" />
     <ClCompile Include="pat_b1041.cpp" />
     <ClCompile Include="pat_b1046.cpp" />
   </ItemGroup>
