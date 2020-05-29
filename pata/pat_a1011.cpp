@@ -18,7 +18,7 @@ void pat_a1011() {
 	printf("%c %c %c %.2f", c[max_id[0]], c[max_id[1]], c[max_id[2]], profit);
 }
 
-
-int main() {
-	pat_a1011();
-}
+//
+//int main() {
+//	pat_a1011();
+//}
