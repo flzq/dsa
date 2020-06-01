@@ -18,6 +18,6 @@ void pat_b1022() {
 	}
 }
 
-int main() {
-	pat_b1022();
-}
+//int main() {
+//	pat_b1022();
+//}
