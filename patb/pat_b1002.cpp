@@ -1,5 +1,4 @@
-
-//#include <cstdio>
+#include <cstdio>
 #include <cstring>
 
 void pat_b1002() {
