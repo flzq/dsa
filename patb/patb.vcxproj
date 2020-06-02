@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="pat_b1001.cpp" />
+    <ClCompile Include="pat_b1002.cpp" />
     <ClCompile Include="pat_b1004.cpp" />
     <ClCompile Include="pat_b1006.cpp" />
     <ClCompile Include="pat_b1008.cpp" />
