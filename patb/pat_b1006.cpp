@@ -16,6 +16,7 @@ void pat_b1006() {
 	for (int i = 1; i <= g; ++i) {
 		printf("%d", i);
 	}
+
 }
 
 //int main() {
