@@ -20,8 +20,8 @@ void pat_b1021() {
 }
 
 
-int main() {
-	pat_b1021();
-
-	return 0;
-}
+//int main() {
+//	pat_b1021();
+//
+//	return 0;
+//}
