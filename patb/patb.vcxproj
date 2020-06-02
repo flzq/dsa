@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="pat_b1001.cpp" />
     <ClCompile Include="pat_b1004.cpp" />
+    <ClCompile Include="pat_b1006.cpp" />
     <ClCompile Include="pat_b1008.cpp" />
     <ClCompile Include="pat_b1008_simple.cpp" />
     <ClCompile Include="pat_b1010.cpp" />
