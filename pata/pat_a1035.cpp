@@ -58,7 +58,7 @@ void pat_a1035() {
 	}
 }
 
-int main() {
-	pat_a1035();
-	return 0;
-}
+//int main() {
+//	pat_a1035();
+//	return 0;
+//}
