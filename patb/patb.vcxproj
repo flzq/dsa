@@ -149,6 +149,7 @@
     <ClCompile Include="pat_b1011.cpp" />
     <ClCompile Include="pat_b1012.cpp" />
     <ClCompile Include="pat_b1014.cpp" />
+    <ClCompile Include="pat_b1015.cpp" />
     <ClCompile Include="pat_b1018.cpp" />
     <ClCompile Include="pat_b1021.cpp" />
     <ClCompile Include="pat_b1022.cpp" />

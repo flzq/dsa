@@ -38,7 +38,7 @@ void pat_b1048() {
 	}
 }
 
-int main() {
-	pat_b1048();
-	return 0;
-}
+//int main() {
+//	pat_b1048();
+//	return 0;
+//}
