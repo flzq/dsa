@@ -3,13 +3,13 @@
 #include <algorithm>
 using std::sort;
 
-struct Stu{
+struct Stu_pat_a1025{
 	char reg_num[14];
 	int score;
 	int final_rank, local_rank, local;
 }stu[30000];
 
-bool cmp(Stu& a, Stu& b) {
+bool cmp(Stu_pat_a1025& a, Stu_pat_a1025& b) {
 	if (a.score != b.score) {
 		return a.score > b.score;
 	}
