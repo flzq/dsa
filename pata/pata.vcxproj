@@ -161,6 +161,7 @@
     <ClCompile Include="pat_a1065.cpp" />
     <ClCompile Include="pat_a1006.cpp" />
     <ClCompile Include="pat_a1073.cpp" />
+    <ClCompile Include="pat_a1075.cpp" />
     <ClCompile Include="pat_a1077.cpp" />
     <ClCompile Include="pat_a1082.cpp" />
   </ItemGroup>
