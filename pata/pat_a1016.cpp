@@ -89,8 +89,8 @@ void pat_a1016() {
 
 }
 
-int main() {
-	pat_a1016();
-
-	return 0;
-}
+//int main() {
+//	pat_a1016();
+//
+//	return 0;
+//}
