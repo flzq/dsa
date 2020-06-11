@@ -44,8 +44,8 @@ void pat_b1033() {
 	}
 }
 
-int main() {
-	pat_b1033();
-
-	return 0;
-}
+//int main() {
+//	pat_b1033();
+//
+//	return 0;
+//}
