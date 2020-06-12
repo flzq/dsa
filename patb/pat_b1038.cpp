@@ -22,8 +22,8 @@ void pat_b1038() {
 }
 
 
-int main() {
-	pat_b1038();
-
-	return 0;
-}
+//int main() {
+//	pat_b1038();
+//
+//	return 0;
+//}
