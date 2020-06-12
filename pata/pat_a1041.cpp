@@ -15,7 +15,7 @@ void pat_a1041() {
 		++hash_table[number];
 		num[i] = number;
 	}
-	// 找到只出现一次的数字
+	// index为只出现一次的数字[1, 10e4]
 	int index{ 0 };
 	for (int i = 0; i < N; ++i) {
 		if (hash_table[num[i]] == 1) {
