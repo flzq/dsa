@@ -170,6 +170,7 @@
     <ClCompile Include="pat_b1043.cpp" />
     <ClCompile Include="pat_b1046.cpp" />
     <ClCompile Include="pat_b1037.cpp" />
+    <ClCompile Include="pat_b1047.cpp" />
     <ClCompile Include="pat_b1048.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
