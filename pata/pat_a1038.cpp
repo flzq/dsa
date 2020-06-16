@@ -10,6 +10,7 @@ struct Digit_pat_a1038 {
 bool cmp_pat_a1038(Digit_pat_a1038& a, Digit_pat_a1038& b) {
 	int len_a = strlen(a.digit);
 	int len_b = strlen(b.digit);
+	printf("( %d %d )", len_a, len_b);
 	int i;
 	for (i = 0; i < len_a && i < len_b; ++i) {
 		if (a.digit[i] < b.digit[i]) {
@@ -24,22 +25,22 @@ bool cmp_pat_a1038(Digit_pat_a1038& a, Digit_pat_a1038& b) {
 		return true;
 	}
 }
-
+Digit_pat_a1038 segments[10000];
 void pat_a1038() {
 	// 如果某个segment是全0, 则不能第一个输出
 	int N;
 	// char segments[10000][9];
-	Digit_pat_a1038 segments[10000];
 	scanf("%d", &N);
 	for (int i = 0; i < N; ++i) {
 		scanf("%s", segments[i].digit);
 	}
+	cmp_pat_a1038(segments[0], segments[1]);
 	// 排序
 	// 因为所有数字合成一个数字后长度一样，因此每次从每个segment中选择开头最小的，
 	// 相同选择第二位最小的，继续相同选择第三位最小的。。。当前面一样时，选择长度更长的
-	sort(segments, segments + N, cmp_pat_a1038);
-	/*for (int i = 0; i < N; ++i) {
-		printf("%s", segments[i].c_str());
+	/*sort(segments, segments + N, cmp_pat_a1038);
+	for (int i = 0; i < N; ++i) {
+		printf("%s", segments[i].digit);
 	}*/
 }
 
