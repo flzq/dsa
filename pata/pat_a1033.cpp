@@ -61,8 +61,8 @@ void pat_a1033() {
 }
 
 
-int main() {
-	pat_a1033();
-
-	return 0;
-}
+//int main() {
+//	pat_a1033();
+//
+//	return 0;
+//}
