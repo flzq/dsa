@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <algorithm>
+using std::sort;
 
 void pat_a1048() {
 	// 使用hash_table
@@ -36,20 +38,37 @@ void pat_a1048_2() {
 	for (int i = 0; i < N; ++i) {
 		scanf("%d", &coins[i]);
 	}
+	sort(coins, coins + N);
 	// V1从第0枚开始枚举
-	int flag = true; // 有解决方案
+	int flag = false; // 有解决方案
 	for (int i = 0; i < N; ++i) {
 		int V1 = coins[i];
 		// 从[i+1, N+1]找到面值刚好为M-V1的coin
-		int left = i + 1, right = N + 1, mid;
+		int V2 = M - V1;
+		int left = i + 1, right = N, mid;
 		while (left < right) {
 			mid = (left + right) / 2;
-
+			if (coins[mid] >= V2) {
+				right = mid;
+			}
+			else {
+				left = mid + 1;
+			}
 		}
+		if (left < N && V2 == coins[left]) {
+			flag = true;
+			printf("%d %d", V1, V2);
+			break;
+		}
+
+	}
+	if (flag == false) {
+		printf("No Solution");
 	}
 }
 
 //int main() {
-//	pat_a1048();
+//	//pat_a1048();
+//	pat_a1048_2();
 //	return 0;
 //}
