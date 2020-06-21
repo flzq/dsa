@@ -1,6 +1,7 @@
 #include <cstdio>
 
 void pat_a1048() {
+	// 使用hash_table
 	// 测试点3：注意v2，要v2>=0 && v2<=500, 防止v2越界
 	int N, M;
 	int hash_table[510]{ 0 }; // 相应面值硬币的数量
@@ -24,6 +25,27 @@ void pat_a1048() {
 	}
 	if (flag == false) {
 		printf("No Solution");
+	}
+}
+
+void pat_a1048_2() {
+	// 使用二分法
+	int N, M;
+	int coins[100000];
+	scanf("%d%d", &N, &M);
+	for (int i = 0; i < N; ++i) {
+		scanf("%d", &coins[i]);
+	}
+	// V1从第0枚开始枚举
+	int flag = true; // 有解决方案
+	for (int i = 0; i < N; ++i) {
+		int V1 = coins[i];
+		// 从[i+1, N+1]找到面值刚好为M-V1的coin
+		int left = i + 1, right = N + 1, mid;
+		while (left < right) {
+			mid = (left + right) / 2;
+
+		}
 	}
 }
 
