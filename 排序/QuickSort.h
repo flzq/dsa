@@ -5,30 +5,27 @@ void swap(int* a, int* b) {
 	*a = *b;
 	*b = tmp;
 }
-int medianPivot(int* data, int left, int right) {
-	int mid = (left + right) / 2;
-	if (data[left] > data[mid]) swap(&data[left], &data[mid]);
-	if (data[left] > data[right]) swap(&data[left], &data[right]);
-	if (data[mid] > data[right]) swap(&data[mid], &data[right]);
-	swap(&data[mid], &data[right - 1]);
-	return data[right - 1];
+int partion(int* data, int left, int right) {
+	int tmp = data[left];
+	while (left < right) {
+		while (left < right && data[right] > tmp) {
+			--right;
+		}
+		data[left] = data[right];
+		while (left < right && data[left] >= tmp) {
+			++left;
+		}
+		data[right] = data[left];
+	}
+	data[left] = tmp;
+
+	return left;
 }
 void QSort(int* data, int left, int right) {
-	int pivot;
-	if (right - left < cutoff) {
-
-	}
-	else {
-		pivot = medianPivot(data, left, right);
-		int i, j;
-		i = left + 1;
-		j = right - 2;
-		while (1) {
-			while (data[i] < pivot) i++;
-			while (data[j] > pivot) j--;
-			if (i < j) swap(&data[i], &data[j]);
-			else break;
-		}
+	if (left < right) {
+		int pivot = partion(data, left, right);
+		QSort(data, left, pivot - 1);
+		QSort(data, pivot + 1, right);
 	}
 }
 void quick_sort(int* data_, int size_) {
