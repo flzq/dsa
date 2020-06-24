@@ -61,7 +61,7 @@ void pat_b1030_2() {
 	printf("%d", max);
 }
 
-int main() {
-	pat_b1030_2();
-	return 0;
-}
+//int main() {
+//	pat_b1030_2();
+//	return 0;
+//}
