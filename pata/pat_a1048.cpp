@@ -67,6 +67,29 @@ void pat_a1048_2() {
 	}
 }
 
+void pat_a0148_3() {
+	// tow pointers
+	int N, M;
+	int coins[100010];
+	bool flag = false; // 是否有解决方法
+	scanf("%d%d", &N, &M);
+	for (int i = 0; i < N; ++i) {
+		scanf("%d", &coins[i]);
+	}
+	sort(coins, coins + N);
+	int left = 0, right = N - 1;
+	while (left < right) {
+		int V1 = coins[left];
+		int V2 = M - V1;
+		if (V1 <= V2) {
+			if ()
+		}
+		else {
+
+		}
+	}
+}
+
 //int main() {
 //	//pat_a1048();
 //	pat_a1048_2();
