@@ -67,7 +67,7 @@ void pat_a1048_2() {
 	}
 }
 
-void pat_a0148_3() {
+void pat_a1048_3() {
 	// tow pointers
 	int N, M;
 	int coins[100010];
@@ -82,16 +82,30 @@ void pat_a0148_3() {
 		int V1 = coins[left];
 		int V2 = M - V1;
 		if (V1 <= V2) {
-			if ()
+			if (coins[right] > V2) {
+				--right;
+			}
+			else if (coins[right] < V2) {
+				++left;
+			}
+			else {
+				printf("%d %d", V1, V2);
+				flag = true;
+				break;
+			}
 		}
 		else {
-
+			break;
 		}
+	}
+	if (flag == false) {
+		printf("No Solution");
 	}
 }
 
 //int main() {
 //	//pat_a1048();
-//	pat_a1048_2();
+//	// pat_a1048_2();
+//	pat_a1048_3();
 //	return 0;
 //}
