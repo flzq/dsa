@@ -1,5 +1,8 @@
 #include <cstdio>
-
+/*
+归并排序的中间步骤中,在step==2时,一定有序
+因此, step==2时,如果归并排序不是有序,则一定是插入排序,否则是归并排序
+*/
 void pat_b1035() {
 	int N;
 	int numbers[100];
@@ -49,8 +52,9 @@ void pat_b1035() {
 			int L2 = left + step / 2;
 			int R2 = right;
 			while (L1 <= R1 && L2 <= R2) {
-				if (L1 != 0) {
+				if (cnt_cout != 0) {
 					printf(" ");
+					++cnt_cout;
 				}
 				if (mid_numbers[L1] <= mid_numbers[L2]) {
 					printf("%d", mid_numbers[L1++]);
@@ -62,14 +66,20 @@ void pat_b1035() {
 				}
 			}
 			while (L1 <= R1) {
+				if (cnt_cout != 0) {
+					printf(" ");
+					++cnt_cout;
+				}
 				printf("%d", mid_numbers[L1++]);
+				++cnt_cout;
 			}
 			while (L2 <= R2) {
-				if (cout_black != 0) {
+				if (cnt_cout != 0) {
 					printf(" ");
-					++cout_black;
+					++cnt_cout;
 				}
 				printf("%d", mid_numbers[L2++]);
+				++cnt_cout;
 			}
 			left += step;
 			right = (N - 1) < (right + step) ? (N - 1) : (right + step);
@@ -81,48 +91,52 @@ void pat_b1035() {
 		for (int i = 0; i < N-1 && mid_numbers[i]<=mid_numbers[i+1]; ++i) {
 			++cnt;
 		}
-		// 输出前cnt个
+		// 输出前cnt+1个
 		printf("Insertion Sort\n");
-		int i = 0, j = cnt-1;
-		while (i <= cnt - 2 && j <= cnt - 1) {
-			if (cout_black != 0) {
+		int i = 0, j = cnt;
+		while (i <= cnt - 1 && j <= cnt) {
+			if (cnt_cout != 0) {
 				printf(" ");
 			}
 			if (mid_numbers[i] <= mid_numbers[j]) {
 				printf("%d", mid_numbers[i++]);
-				++cout_black;
+				++cnt_cout;
 			}
 			else {
 				printf("%d", mid_numbers[j++]);
+				++cnt_cout;
 			}
 		}
-		while (i <= cnt - 2) {
-			if (cout_black != 0) {
+		while (i <= cnt - 1) {
+			if (cnt_cout != 0) {
 				printf(" ");
-				++cout_black;
+				++cnt_cout;
 			}
 			printf("%d", mid_numbers[i++]);
+			++cnt_cout;
 		}
-		while (j <= cnt - 1) {
-			if (cout_black != 0) {
+		while (j <= cnt) {
+			if (cnt_cout != 0) {
 				printf(" ");
-				++cout_black;
+				++cnt_cout;
 			}
 			printf("%d", mid_numbers[j++]);
+			++cnt_cout;
 		}
-		i = cnt;
+		i = cnt+1;
 		while (i < N) {
-			if (cout_black != 0) {
+			if (cnt_cout != 0) {
 				printf(" ");
-				++cout_black;
+				++cnt_cout;
 			}
 			printf("%d", mid_numbers[i++]);
+			++cnt_cout;
 		}
 	}
 }
 
 
-int main() {
-	pat_b1035();
-	return 0;
-}
+//int main() {
+//	pat_b1035();
+//	return 0;
+//}
