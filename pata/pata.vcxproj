@@ -176,6 +176,7 @@
     <ClCompile Include="pat_a1082.cpp" />
     <ClCompile Include="pat_a1084.cpp" />
     <ClCompile Include="pat_a1085.cpp" />
+    <ClCompile Include="pat_a1089.cpp" />
     <ClCompile Include="pat_a1092.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
