@@ -170,6 +170,7 @@
     <ClCompile Include="pat_a1065.cpp" />
     <ClCompile Include="pat_a1006.cpp" />
     <ClCompile Include="pat_a1067.cpp" />
+    <ClCompile Include="pat_a1069.cpp" />
     <ClCompile Include="pat_a1070.cpp" />
     <ClCompile Include="pat_a1073.cpp" />
     <ClCompile Include="pat_a1075.cpp" />
