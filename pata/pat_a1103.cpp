@@ -1,50 +1,58 @@
 #include <cstdio>
 #include <cmath>
 #include <stack>
+#include <vector>
 using namespace std;
 
-stack<int>  ans;
-bool flag = false;
+int max_sum_fac_pat_a1103{ -1 };
 
-void int_fac_dfs_pat_a1103(int k, int now_k, stack<int>& tmp_kseq, int squr_sum, int N, int K, int P) {
-	if (now_k == K && squr_sum == N) {
-		ans = tmp_kseq;
-		flag = true;
+void int_fac_dfs_pat_a1103(int index, int now_k, int sum_squr, int sum_fac,
+	vector<int>& ans, vector<int>& tmp_ans, vector<int>& vkp, vector<int>& vk, int N, int K, int P) {
+	if (now_k == K && sum_squr == N) {
+		if (sum_fac > max_sum_fac_pat_a1103) {
+			ans = tmp_ans;
+			max_sum_fac_pat_a1103 = sum_fac;
+		}
 		return;
 	}
-	if (now_k > K || squr_sum > N) {
-		// printf("Impossible");
+	if (now_k > K || sum_squr > N || index < 1) {
 		return;
 	}
-	tmp_kseq.push(k);
-	int_fac_dfs_pat_a1103(k, now_k+1, tmp_kseq, squr_sum+k*k, N, K, P);
-	tmp_kseq.pop();
-	int_fac_dfs_pat_a1103(k + 1, now_k, tmp_kseq, squr_sum, N, K, P);
+
+	// 继续选择index
+	tmp_ans.push_back(index);
+	int_fac_dfs_pat_a1103(index, now_k + 1, sum_squr + vkp[index], sum_fac + vk[index],
+		ans, tmp_ans, vkp, vk, N, K, P);
+	tmp_ans.pop_back();
+	// 不选index
+	int_fac_dfs_pat_a1103(index - 1, now_k, sum_squr, sum_fac, ans, tmp_ans, vkp, vk, N, K, P);
 }
 
 void pat_a1103() {
 	int N, K, P;
-	stack<int> st;
+	vector<int> ans, tmp_ans, vkp, vk; // ans存储最后的结果; tmp_ans存储中间结果
 	scanf("%d%d%d", &N, &K, &P);
-	int_fac_dfs_pat_a1103(0, 0, st, 0, N, K, P);
-
-	if (flag) {
-		printf("%d = ", N);
-		int cnt = 0;
-		while (ans.empty() == false) {
-			if (cnt == 0) {
-				printf("%d^%d", ans.top(), P);
-			}
-			else {
-				printf(" + %d^%d", ans.top(), P);
-			}
-			ans.pop();
-			++cnt;
-		}
+	for (int i = 0; (int)pow(i, P) < N; ++i) {
+		vkp.push_back((int)pow(i, P));
+		vk.push_back(i);
 	}
-	else {
+
+	int_fac_dfs_pat_a1103(vkp.size()- 1, 0, 0, 0, ans, tmp_ans, vkp, vk, N, K, P);
+	if (ans.empty()) {
 		printf("Impossible");
 	}
+	else {
+		printf("%d =", N);
+		for (int i = 0; i < ans.size(); ++i) {
+			if (i != 0) {
+				printf(" + %d^%d", ans[i], P);
+			}
+			else {
+				printf(" %d^%d", ans[i], P);
+			}
+		}
+	}
+
 }
 
 //int main() {
