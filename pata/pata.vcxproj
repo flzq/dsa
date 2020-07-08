@@ -170,6 +170,7 @@
     <ClCompile Include="pat_a1050.cpp" />
     <ClCompile Include="pat_a1051.cpp" />
     <ClCompile Include="pat_a1052.cpp" />
+    <ClCompile Include="pat_a1053.cpp" />
     <ClCompile Include="pat_a1054.cpp" />
     <ClCompile Include="pat_a1055.cpp" />
     <ClCompile Include="pat_a1056.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="pat_a1073.cpp" />
     <ClCompile Include="pat_a1075.cpp" />
     <ClCompile Include="pat_a1077.cpp" />
+    <ClCompile Include="pat_a1079.cpp" />
     <ClCompile Include="pat_a1082.cpp" />
     <ClCompile Include="pat_a1084.cpp" />
     <ClCompile Include="pat_a1085.cpp" />
