@@ -201,6 +201,7 @@
     <ClCompile Include="pat_a1100.cpp" />
     <ClCompile Include="pat_a1102.cpp" />
     <ClCompile Include="pat_a1103.cpp" />
+    <ClCompile Include="pat_a1106.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
