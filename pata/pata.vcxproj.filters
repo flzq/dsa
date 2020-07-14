@@ -1,220 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="资源文件">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="pat_a1042.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1046.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1065.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1002.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1009.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1011.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1006.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1036.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1031.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1019.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1027.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1058.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1061.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1073.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1001.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1005.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1035.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1077.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1082.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1025.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1062.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1012.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1016.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1028.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1055.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1075.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1084.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1092.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1041.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1050.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1048.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1070.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1033.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1037.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1067.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1038.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1085.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1010.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1044.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1089.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1029.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1069.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1039.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1047cpp.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1063.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1060.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1100.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1054.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1071.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1022.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1051.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1056.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1032.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1052.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1103.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1091.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1020.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1086.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1053.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1079.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1102.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1090.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1094.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1106.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1043.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1066.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pat_a1098.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
+    <ClCompile Include="pat_a1001.cpp" />
+    <ClCompile Include="pat_a1002.cpp" />
+    <ClCompile Include="pat_a1005.cpp" />
+    <ClCompile Include="pat_a1009.cpp" />
+    <ClCompile Include="pat_a1010.cpp" />
+    <ClCompile Include="pat_a1011.cpp" />
+    <ClCompile Include="pat_a1012.cpp" />
+    <ClCompile Include="pat_a1016.cpp" />
+    <ClCompile Include="pat_a1019.cpp" />
+    <ClCompile Include="pat_a1020.cpp" />
+    <ClCompile Include="pat_a1022.cpp" />
+    <ClCompile Include="pat_a1025.cpp" />
+    <ClCompile Include="pat_a1027.cpp" />
+    <ClCompile Include="pat_a1028.cpp" />
+    <ClCompile Include="pat_a1029.cpp" />
+    <ClCompile Include="pat_a1031.cpp" />
+    <ClCompile Include="pat_a1032.cpp" />
+    <ClCompile Include="pat_a1033.cpp" />
+    <ClCompile Include="pat_a1035.cpp" />
+    <ClCompile Include="pat_a1036.cpp" />
+    <ClCompile Include="pat_a1037.cpp" />
+    <ClCompile Include="pat_a1038.cpp" />
+    <ClCompile Include="pat_a1039.cpp" />
+    <ClCompile Include="pat_a1041.cpp" />
+    <ClCompile Include="pat_a1042.cpp" />
+    <ClCompile Include="pat_a1043.cpp" />
+    <ClCompile Include="pat_a1044.cpp" />
+    <ClCompile Include="pat_a1046.cpp" />
+    <ClCompile Include="pat_a1047cpp.cpp" />
+    <ClCompile Include="pat_a1048.cpp" />
+    <ClCompile Include="pat_a1050.cpp" />
+    <ClCompile Include="pat_a1051.cpp" />
+    <ClCompile Include="pat_a1052.cpp" />
+    <ClCompile Include="pat_a1053.cpp" />
+    <ClCompile Include="pat_a1054.cpp" />
+    <ClCompile Include="pat_a1055.cpp" />
+    <ClCompile Include="pat_a1056.cpp" />
+    <ClCompile Include="pat_a1058.cpp" />
+    <ClCompile Include="pat_a1060.cpp" />
+    <ClCompile Include="pat_a1061.cpp" />
+    <ClCompile Include="pat_a1062.cpp" />
+    <ClCompile Include="pat_a1063.cpp" />
+    <ClCompile Include="pat_a1065.cpp" />
+    <ClCompile Include="pat_a1006.cpp" />
+    <ClCompile Include="pat_a1066.cpp" />
+    <ClCompile Include="pat_a1067.cpp" />
+    <ClCompile Include="pat_a1069.cpp" />
+    <ClCompile Include="pat_a1070.cpp" />
+    <ClCompile Include="pat_a1071.cpp" />
+    <ClCompile Include="pat_a1073.cpp" />
+    <ClCompile Include="pat_a1075.cpp" />
+    <ClCompile Include="pat_a1077.cpp" />
+    <ClCompile Include="pat_a1079.cpp" />
+    <ClCompile Include="pat_a1082.cpp" />
+    <ClCompile Include="pat_a1084.cpp" />
+    <ClCompile Include="pat_a1085.cpp" />
+    <ClCompile Include="pat_a1086.cpp" />
+    <ClCompile Include="pat_a1089.cpp" />
+    <ClCompile Include="pat_a1090.cpp" />
+    <ClCompile Include="pat_a1091.cpp" />
+    <ClCompile Include="pat_a1092.cpp" />
+    <ClCompile Include="pat_a1094.cpp" />
+    <ClCompile Include="pat_a1098.cpp" />
+    <ClCompile Include="pat_a1100.cpp" />
+    <ClCompile Include="pat_a1102.cpp" />
+    <ClCompile Include="pat_a1103.cpp" />
+    <ClCompile Include="pat_a1106.cpp" />
+    <ClCompile Include="pat_a1107.cpp" />
+    <ClCompile Include="pat_a1034.cpp" />
   </ItemGroup>
 </Project>
