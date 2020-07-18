@@ -1,6 +1,7 @@
 #include <cstdio>
 #include <algorithm>
 #include <vector>
+#include <set>
 using namespace std;
 
 const int MAXV{ 500 };
@@ -67,7 +68,8 @@ public:
 
 class Pat_a1003_BellmanFord {
 	int N, M, C1, C2, INF{ 1000000000 };
-	int num_city_teams[MAXV]{ 0 }, dis[MAXV];
+	int num_city_teams[MAXV]{ 0 }, dis[MAXV], sum_teams[MAXV]{ 0 }, num_path[MAXV]{ 0 };
+	set<int> path[MAXV];
 	struct Node {
 		int v, weight;
 		Node(int v_, int weight_) : v{ v_ }, weight{ weight_ } {}
@@ -87,9 +89,12 @@ public:
 			Adj[c2].push_back(Node(c1, weight));
 		}
 		bellman_ford(C1);
+		printf("%d %d", num_path[C2], sum_teams[C2]);
 	}
 	void bellman_ford(int s) {
 		dis[s] = 0;
+		sum_teams[s] = num_city_teams[s];
+		num_path[s] = 1;
 		int u, v;
 		for (int i = 0; i < N - 1; ++i) {
 			for (int j = 0; j < N; ++j) {
@@ -98,6 +103,21 @@ public:
 					v = Adj[u][k].v;
 					if (dis[u] + Adj[u][k].weight < dis[v]) {
 						dis[v] = dis[u] + Adj[u][k].weight;
+						sum_teams[v] = sum_teams[u] + num_city_teams[v];
+						num_path[v] = num_path[u];
+						path[v].clear();
+						path[v].insert(u);
+					}
+					else if (dis[u] + Adj[u][k].weight == dis[v]) {
+						if (sum_teams[u] + num_city_teams[v] > sum_teams[v]) {
+							sum_teams[v] = sum_teams[u] + num_city_teams[v];
+						}
+						path[v].insert(u);
+						num_path[v] = 0;
+						set<int>::iterator it;
+						for (it = path[v].begin(); it != path[v].end(); ++it) {
+							num_path[v] += num_path[*it];
+						}
 					}
 				}
 			}
@@ -106,7 +126,9 @@ public:
 };
 
 //int main() {
-//	Pat_a1003 pat_a1003;
-//	pat_a1003.pat_a1003();
+//	/*Pat_a1003 pat_a1003;
+//	pat_a1003.pat_a1003();*/
+//	Pat_a1003_BellmanFord pat_a1003_bellmanford;
+//	pat_a1003_bellmanford.pat_a1003();
 //	return 0;
 //}
