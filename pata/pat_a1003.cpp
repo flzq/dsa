@@ -1,6 +1,9 @@
 #include <cstdio>
 #include <algorithm>
+#include <vector>
 using namespace std;
+
+const int MAXV{ 500 };
 
 class Pat_a1003 {
 	int N, M, C1, C2, id1, id2, weight, INF{ 1000000000 };
@@ -55,6 +58,46 @@ public:
 							total_team[v] = total_team[u] + num_team[v];
 						}
 						num_shortest[v] += num_shortest[u];
+					}
+				}
+			}
+		}
+	}
+};
+
+class Pat_a1003_BellmanFord {
+	int N, M, C1, C2, INF{ 1000000000 };
+	int num_city_teams[MAXV]{ 0 }, dis[MAXV];
+	struct Node {
+		int v, weight;
+		Node(int v_, int weight_) : v{ v_ }, weight{ weight_ } {}
+	};
+	vector<Node> Adj[MAXV];
+public:
+	void pat_a1003() {
+		int c1, c2, weight;
+		fill(dis, dis + MAXV, INF);
+		scanf("%d%d%d%d", &N, &M, &C1, &C2);
+		for (int i = 0; i < N; ++i) {
+			scanf("%d", &num_city_teams[i]);
+		}
+		for (int i = 0; i < M; ++i) {
+			scanf("%d%d%d", &c1, &c2, &weight);
+			Adj[c1].push_back(Node(c2, weight));
+			Adj[c2].push_back(Node(c1, weight));
+		}
+		bellman_ford(C1);
+	}
+	void bellman_ford(int s) {
+		dis[s] = 0;
+		int u, v;
+		for (int i = 0; i < N - 1; ++i) {
+			for (int j = 0; j < N; ++j) {
+				for (int k = 0; k < Adj[j].size(); ++k) {
+					u = j;
+					v = Adj[u][k].v;
+					if (dis[u] + Adj[u][k].weight < dis[v]) {
+						dis[v] = dis[u] + Adj[u][k].weight;
 					}
 				}
 			}
