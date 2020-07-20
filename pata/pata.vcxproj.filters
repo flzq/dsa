@@ -74,5 +74,6 @@
     <ClCompile Include="pat_a1003.cpp" />
     <ClCompile Include="pat_a1030.cpp" />
     <ClCompile Include="pat_a1007.cpp" />
+    <ClCompile Include="pat_a1045.cpp" />
   </ItemGroup>
 </Project>
