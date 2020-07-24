@@ -165,6 +165,7 @@
     <ClCompile Include="pat_a1037.cpp" />
     <ClCompile Include="pat_a1038.cpp" />
     <ClCompile Include="pat_a1039.cpp" />
+    <ClCompile Include="pat_a1040.cpp" />
     <ClCompile Include="pat_a1041.cpp" />
     <ClCompile Include="pat_a1042.cpp" />
     <ClCompile Include="pat_a1043.cpp" />
