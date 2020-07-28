@@ -8,8 +8,8 @@ public:
 	}
 };
 
-int main() {
-	Pat_a1068 pat_a1068;
-	pat_a1068.pat_a1068();
-	return 0;
-}
+//int main() {
+//	Pat_a1068 pat_a1068;
+//	pat_a1068.pat_a1068();
+//	return 0;
+//}
